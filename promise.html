@@ -1,175 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zona Scientific</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      /* General Reset */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      body {
-        font-family: "Inter", sans-serif;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zona Scientific</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      .blue-header {
-        background-color: #2A3D98;
-        color: white;
-        padding: 10px 20px;
-        font-size: 14px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    body {
+      font-family: "Inter", sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-      .white-header {
-        background-color: #fff;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ccc;
-      }
+    .blue-header {
+      background-color: #2a3d98;
+      color: white;
+      padding: 0 20px;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      .logo-container {
-        display: flex;
-        align-items: center;
-        margin-right: 10px;
-      }
+    .blue-header div {
+      flex: 1;
+      margin-bottom: 5px;
+    }
 
-      .logo {
-        width: 350px;
-        height: 70px;
-        padding-right: 70px;
-      }
+    .contact-info {
+      text-align: right;
+    }
 
-      .nav-links a {
-        margin-left: 6px;
-        text-decoration: none;
-        color: #2A3D98;
-        font-size: 20px;
-        font-weight: 600;
-        padding-right: 100px;
-      }
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+    }
 
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
 
-      .content-section {
-        position: relative;
-        width: 100%;
-        height: 688px;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
 
+    .white-header {
+      background-color: #fff;
+      padding: 15px 20px;
+      font-family: "Inter", sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo-container {
+      flex: 1;
+    }
+
+    .logo {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .nav-links {
+      flex: 2;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2a3d98;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+      color: #1a2d6e;
+    }
+
+
+
+    .content-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .heading {
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #2A3D98;
+      margin-bottom: 20px;
+    }
+
+    .text-container {
+      max-width: 515px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #2A3D98;
+      font-weight: 400;
+    }
+
+    .image-container {
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 50px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+      top: 20px;
+      right: 20px;
+    }
+
+    .hamburger-menu span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: #2a3d98;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links.mobile {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px;
+      border-radius: 10px;
+      z-index: 10;
+    }
+
+    .nav-links.mobile a {
+      margin: 10px 0;
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+
+
+
+    footer {
+      background-color: #2A3D98;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
       .content-container {
-        width: 1106px;
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
 
       .heading {
-        position: relative;
-        font-size: 48px;
-        font-weight: 600;
-        line-height: 67.2px;
-        color: #2A3D98;
-        margin-bottom: 20px;
-        margin-top: -30px;
+        font-size: 2rem;
       }
 
       .text-container {
-        width: 515px;
-        font-size: 16px;
-        line-height: 25.6px;
-        color: #2A3D98;
-        font-weight: 400;
+        max-width: 100%;
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .heading {
+        font-size: 1.75rem;
+      }
+
+      .text-container {
+        font-size: 0.9rem;
+      }
+
+      .content-section {
+        padding: 20px 10px;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      .blue-header {
+        font-family: "Inter", sans-serif;
+        flex-direction: column;
+        text-align: center;
+        padding: 5px 0;
+      }
+
+      .blue-header div {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      .white-header {
+        font-family: "Inter", sans-serif;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo-container {
+        margin-bottom: 10px;
+      }
+
+      .text-container {
+        text-align: left;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+      }
+
+      .image-container {
+        width: 90%;
+        border-radius: 30px;
       }
 
       .image-container img {
-        width: 471px;
-        height: 425px;
-        border-radius: 41px;
-        margin-left: 90px;
+        border-radius: 30px;
       }
 
-      footer {
-        background-color: #2A3D98;
-        color: white;
-        text-align: center;
-        padding: 15px 0;
+      .hamburger-menu {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .blue-header {
+        font-family: "Inter", sans-serif;
+        flex-direction: row;
+        padding: 0 30px;
+      }
+
+      .blue-header div {
+        font-size: 13px;
+      }
+
+      .logo {
+        max-width: 120px;
+      }
+
+      .nav-links a {
         font-size: 14px;
-        font-weight: 400;
       }
-    </style>
-  </head>
+    }
 
-  <body>
-    <!-- Blue Header -->
-    <header class="blue-header">
-      <div>Office: Block 4A, Gulshan-e-Iqbal, Karachi</div>
-      <div>+92 3322902327 | Zohaibbux3@gmail.com</div>
-    </header>
+    @media (min-width: 1025px) {
+      .blue-header {
+        font-family: "Inter", sans-serif;
+        padding: 5px 40px;
+      }
 
-    <!-- White Header -->
-    <header class="white-header">
-      <div class="logo-container">
-        <img src="image 1.png" alt="Zona Scientific Logo" class="logo" />
+      .blue-header div {
+        font-size: 14px;
+      }
+
+      .logo {
+        max-width: 200px;
+      }
+
+      .nav-links a {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-container {
+        width: 100%;
+        border-radius: 20px;
+      }
+
+      .image-container img {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Blue Header -->
+  <header class="blue-header">
+    <div>Office: Block 4A, Gulshan-e-Iqbal, Karachi</div>
+    <div>+92 3322902327 | Zohaibbux3@gmail.com</div>
+  </header>
+
+  <!-- White Header -->
+  <header class="white-header">
+    <div class="logo-container">
+      <img src="image 1.png" alt="Zona Scientific Logo" class="logo" />
+    </div>
+    <!-- Hamburger Button -->
+    <div class="hamburger-menu" id="hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html" rel="noopener noreferrer">Home</a>
+      <a href="index.html#about-us">About Us</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Main Content -->
+  <div class="content-section">
+    <div class="content-container">
+      <div>
+        <h1 class="heading">A Partner You Can Trust</h1>
+        <div class="text-container">
+          At Zona Scientific, we are committed to delivering excellence
+          through our unwavering promise of quality, expertise, support, and
+          innovation. Every product in our portfolio is meticulously evaluated
+          to meet rigorous industry standards, ensuring reliable performance
+          even in the most challenging conditions. Beyond providing equipment,
+          we pride ourselves on offering expert insights and tailored
+          solutions to meet the unique needs of each client.Our dedicated team
+          ensures consistent, responsive support, whether its answering
+          product inquiries or delivering customized solutions. By staying
+          ahead of scientific advancements, we continually update our product
+          range to offer the latest tools and technologies. This commitment to
+          precision, reliability, and service reflects our belief in
+          empowering our clients success and contributing to the advancement
+          of science.
+        </div>
       </div>
-      <nav class="nav-links">
-        <a href="index.html" rel="noopener noreferrer">Home</a>
-        <a href="index.html#about-us">About Us</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#products">Products</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-    </header>
-
-    <!-- Main Content -->
-    <div class="content-section">
-      <div class="content-container">
-        <div>
-          <h1 class="heading">A Partner You Can Trust</h1>
-          <div class="text-container">
-            At Zona Scientific, we are committed to delivering excellence
-            through our unwavering promise of quality, expertise, support, and
-            innovation. Every product in our portfolio is meticulously evaluated
-            to meet rigorous industry standards, ensuring reliable performance
-            even in the most challenging conditions. Beyond providing equipment,
-            we pride ourselves on offering expert insights and tailored
-            solutions to meet the unique needs of each client.Our dedicated team
-            ensures consistent, responsive support, whether its answering
-            product inquiries or delivering customized solutions. By staying
-            ahead of scientific advancements, we continually update our product
-            range to offer the latest tools and technologies. This commitment to
-            precision, reliability, and service reflects our belief in
-            empowering our clients success and contributing to the advancement
-            of science.
-          </div>
-        </div>
-        <div class="image-container">
-          <img src="imm.png" alt="Scientific Innovation" />
-        </div>
+      <div class="image-container">
+        <img src="imm.png" alt="Scientific Innovation" />
       </div>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <footer>&copy; 2024 Zona Scientific. All rights reserved.</footer>
-  </body>
+  <!-- Footer -->
+  <footer>&copy; 2024 Zona Scientific. All rights reserved.</footer>
+  <script>
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+
 </html>
