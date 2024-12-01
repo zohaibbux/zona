@@ -1,136 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-        margin: 0;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto';
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Blue Header */
+    .blue-header {
+      background-color: #2A3D98;
+      color: white;
+      padding: 0 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .blue-header div {
+      flex: 1;
+      margin-bottom: 5px;
+    }
+
+    .contact-info {
+      text-align: right;
+    }
+
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* White Header */
+    .white-header {
+      background-color: #fff;
+      padding: 15px 20px;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2A3D98;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #1A2D6E;
+    }
+
+    /* Hero Section */
+    .HeroSection {
+      font-family: 'Inter', sans-serif;
+      width: 100%;
+      height: 730px;
+      position: relative;
+      background: white;
+      overflow: hidden;
+    }
+
+    .Image33 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.86;
+      object-fit: cover;
+    }
+
+    .Frame5 {
+      width: 70%;
+      height: 85%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: rgba(42, 61, 152, 0.9);
+      border-top-right-radius: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .Button {
+      padding: 12px 20px;
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      background: white;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .Button a {
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      color: #2A3D98;
+    }
+
+    .Heading-hero {
+      color: white;
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .Text-hero {
+      margin-top: 15px;
+      color: #CDD8D9;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      max-width: 570px;
+    }
+
+    /* About Us */
+    .AboutUs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 40px 60px;
+      background: white;
+    }
+
+    .ContentSection {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .Heading {
+      font-size: 2rem;
+      line-height: 1.5;
+      color: #2A3D98;
+    }
+
+    .Icon {
+      width: 60px;
+      height: 60px;
+      background: #2A3D98;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .MissionLink,
+    .PromiseLink {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2A3D98;
+      text-decoration: none;
+    }
+
+    .MissionLink:hover,
+    .PromiseLink:hover {
+      text-decoration: underline;
+    }
+
+    /* Services Section */
+    .ServicesSection {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 60px;
+      background: white;
+    }
+
+    .TextSection {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .Description {
+      color: #2A3D98;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .CardsSection {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .Card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .Card img.Image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-top-left-radius: 40px;
+    }
+
+    .CardTitle {
+      color: #2A3D98;
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .CardTitle:hover {
+      text-decoration: underline;
+    }
+
+    /* Products Section */
+    .ProductsSection {
+      padding: 40px 60px;
+      text-align: center;
+      background: white;
+    }
+
+    .Group126 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-around;
+    }
+
+    .Title {
+      color: #2A3D98;
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .Title:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2A3D98;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .left-section {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .left-section img {
+      width: 16rem;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .left-section p,
+    .left-section a {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      text-decoration: none;
+      color: white;
+    }
+
+    .left-section a:hover {
+      text-decoration: underline;
+    }
+
+    .right-section {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .right-section div {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .right-section h4 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .right-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .right-section ul li {
+      margin-bottom: 5px;
+    }
+
+    .right-section ul li a {
+      color: white;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .right-section ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .blue-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 5px 0;
       }
+
+      .HeroSection {
+        height: 500px;
+      }
+
+      .Frame5 {
+        width: 90%;
+        padding: 20px;
+      }
+
+      .AboutUs,
+      .ServicesSection {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 30px;
+      }
+
+      .CardsSection {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .ProductsSection .Group126 {
+        flex-direction: column;
+        gap: 20px;
+      }
+
       footer {
-        background-color: #2a3d98;
-        color: white;
-        padding: 40px 20px;
+        text-align: center;
       }
-      footer h3,
-      footer h4,
-      footer p,
-      footer a {
-        font-family: "Inter", sans-serif;
+    }
+
+    @media (max-width: 480px) {
+      .HeroSection {
+        height: 400px;
       }
-      .footer-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
+
+      .Frame5 {
+        width: 100%;
+        border-top-right-radius: 40px;
       }
-      .left-section {
-        flex: 1;
-        max-width: 300px;
-        text-align: left; /* Center-align the logo and text */
+
+      .Footer {
+        padding: 20px;
       }
-      .left-section img {
-        display: block;
-        margin: 0 auto; /* Centers the logo horizontally */
-        width: 350px;
-        height: 112px;
-        margin-bottom: 15px;
-      }
-      .left-section p {
-        font-size: 14px;
-        line-height: 1.5;
-        margin: 10px 0;
-        padding-left: 40px;
-      }
-      .right-section {
-        flex: 1;
-        max-width: 600px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-      .right-section div {
-        flex: 1;
-        min-width: 120px;
-        margin-right: 20px;
-      }
-      .right-section h4 {
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        font-size: 16px;
-      }
-      .right-section ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .right-section ul li {
-        margin-bottom: 10px;
-      }
-      .right-section ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      .right-section ul li a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <footer>
-      <div class="footer-container">
-        <!-- Left Section: Company Name, Logo, and Paragraph -->
-        <div class="left-section">
-          <img src="image 36.png" alt="Company Logo" />
-          <p>
-            We pride ourselves on being more than just a distributor of
-            laboratory equipment—we are a cornerstone of precision, reliability,
-            and innovation in the scientific community.
-          </p>
-          <p>+92 306 277 56439</p>
+    }
+  </style>
+
+</head>
+
+<body>
+  <footer>
+    <div id="contact" class="footer-container">
+      <!-- Left Section: Company Name, Logo, and Paragraph -->
+      <div class="left-section">
+        <img src="image 36.png" alt="Company Logo">
+        <p>
+          We pride ourselves on being more than just a distributor of laboratory equipment—we are a cornerstone of
+          precision, reliability, and innovation in the scientific community.
+        </p>
+        <p>+92 3322902327</p>
+        <p><a href="mailto:Zohaibbux3@gmail.com" style="color: inherit; text-decoration: none;">Zohaibbux3@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- Right Section: Navigation, Services, and Products -->
+      <div class="right-section">
+        <!-- Navigation -->
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+
+          </ul>
         </div>
 
-        <!-- Right Section: Navigation, Services, and Products -->
-        <div class="right-section">
-          <!-- Navigation -->
-          <div>
-            <h4>Navigation</h4>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about-us">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-            </ul>
-          </div>
+        <!-- Services -->
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="importing.html" rel="noopener noreferrer">Importing</a></li>
+            <li><a href="distributing.html" rel="noopener noreferrer">Distributing</a></li>
+          </ul>
+        </div>
 
-          <!-- Services -->
-          <div>
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#importing">Importing</a></li>
-              <li><a href="#distributing">Distributing</a></li>
-            </ul>
-          </div>
-
-          <!-- Products -->
-          <div>
-            <h4>Products</h4>
-            <ul>
-              <li><a href="#lab-requirements">Lab Requirements</a></li>
-              <li><a href="#chemical-salts">Chemical Salts</a></li>
-              <li><a href="#lab-acids">Lab Graded Acids</a></li>
-            </ul>
-          </div>
+        <!-- Products -->
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="lab equipments.html" rel="noopener noreferrer">Lab Equipments</a></li>
+            <li><a href="chemical.html" rel="noopener noreferrer">Chemical Salts</a></li>
+            <li><a href="graded acids.html" rel="noopener noreferrer">Lab Graded Acids</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
+
 </html>
