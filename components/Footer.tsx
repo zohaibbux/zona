@@ -155,25 +155,11 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-white/10 bg-black/20">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-center">
             <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} Zona Scientific. All rights
               reserved.
             </p>
-            <div className="flex items-center gap-6">
-              <Link
-                href="/#"
-                className="text-sm text-gray-400 hover:text-secondary transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/#"
-                className="text-sm text-gray-400 hover:text-secondary transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
       </div>
