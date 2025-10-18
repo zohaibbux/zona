@@ -44,6 +44,7 @@ const Footer = () => {
               <a
                 href="mailto:zohaibbux3@gmail.com"
                 className="flex items-center gap-3 text-sm md:text-base text-gray-300 hover:text-secondary transition-colors"
+                aria-label="Email us at zohaibbux3@gmail.com"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-secondary/20 transition-colors">
                   <svg
@@ -98,6 +99,24 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Services</h4>
             <ul className="space-y-3 mb-8">
+              <li>
+                <Link
+                  href="/promise"
+                  className="text-sm md:text-base text-gray-300 hover:text-secondary transition-colors flex items-center gap-2"
+                >
+                  <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                  Promise
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/mission"
+                  className="text-sm md:text-base text-gray-300 hover:text-secondary transition-colors flex items-center gap-2"
+                >
+                  <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                  Mission
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/importing"

@@ -116,9 +116,9 @@ export default function HomePage() {
                     height={32}
                   />
                 </div>
-                <h4 className="text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">
+                <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">
                   Mission
-                </h4>
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
                   We aim to empower innovation by making advanced scientific
                   tools accessible to researchers and innovators driving
@@ -154,9 +154,9 @@ export default function HomePage() {
                     height={32}
                   />
                 </div>
-                <h4 className="text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">
+                <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">
                   Promise
-                </h4>
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
                   At Zona Scientific, we go beyond being a distributor. We are
                   your partner in success, helping you achieve your goals with
@@ -224,9 +224,9 @@ export default function HomePage() {
                       />
                     </div>
                   </div>
-                  <h4 className="text-3xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors">
+                  <h3 className="text-3xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors">
                     Importing
-                  </h4>
+                  </h3>
                   <p className="text-gray-700">
                     Global access to premium chemicals and equipment from
                     trusted international markets.
@@ -257,9 +257,9 @@ export default function HomePage() {
                       />
                     </div>
                   </div>
-                  <h4 className="text-3xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors">
+                  <h3 className="text-3xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors">
                     Distributing
-                  </h4>
+                  </h3>
                   <p className="text-gray-700">
                     Reliable distribution network ensuring quality products
                     reach your laboratory on time.
