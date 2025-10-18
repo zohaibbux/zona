@@ -107,7 +107,7 @@ const Footer = () => {
             {/* Google Maps Embed */}
             <div className="rounded-lg overflow-hidden border-2 border-white/10 hover:border-secondary/50 transition-colors">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3618.2894668397!2d67.097298!3d24.939274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDU2JzIxLjQiTiA2N8KwMDUnNTAuMyJF!5e0!3m2!1sen!2s!4v1729267890123!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.289467!2d67.0933844!3d24.9367752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f003f588437%3A0xb1a34ea5d863bdf7!2sZona%20Scientific!5e0!3m2!1sen!2s!4v1729267890124!5m2!1sen!2s"
                 width="100%"
                 height="200"
                 style={{ border: 0 }}
